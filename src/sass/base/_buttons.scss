@@ -1,0 +1,84 @@
+// Global
+a.button-main,
+.button {
+   outline: 0;
+   cursor:pointer;
+   border-radius: 999em;
+   display:inline-block;
+   padding: 0.5em 1em;
+   margin: 1.5em 0em 0.5em 0em;
+   width:auto;
+   border: 1px solid $button-border;
+   background: transparent;
+   color: $button-color;
+   vertical-align:middle;
+   text-align:center;
+   font-weight:700;
+   text-transform: none;
+   letter-spacing: 1px;
+
+   @include font-size(12px, 'important');
+   @include line-height(16px);
+   @include transition(background $global-transition-duration ease-in-out 0s, color $global-transition-duration ease-in-out 0s);
+}
+
+
+a.button-main:active,a.button-main:focus,a.button-main:hover
+,.button:active,.button:focus,.button:hover,.button.active{
+   color: $button-color-hover;
+   border-color: $button-border-hover;
+   outline: 0;
+}
+
+// Anchors
+a {
+   text-decoration: none;
+   font-weight:500;
+   padding: 3px 0;
+   cursor:pointer;
+   /* @include transition( color $global-transition-duration ease-in-out 0s, border .5s ease-in); */
+   @include transition( color $global-transition-duration ease-in-out 0s , border 0.3s ease);
+   color: $anchor-color;
+}
+
+a:active,a:focus,a:hover {
+   outline:0;
+   color: $anchor-color-hover;
+   text-decoration: none;
+   background: $anchor-background-hover;
+}
+
+a:hover, a:visited, a:link, a:active {
+   text-decoration: none;
+}
+
+// Buttons
+.button {
+   &[disabled=disabled], &:disabled {
+      border-color: $grey-light !important;
+      color: $grey-light;
+      &:hover {
+         background: transparent;
+         border-color: $grey-light !important;
+         color: $grey-light !important;
+      }
+   }
+   &.button-platinum {
+      border-color: $grey-lighter;
+      color: $grey-lighter;
+      &:hover {
+         background: transparent;
+         border-color: $grey-light;
+         color: $grey-lighter;
+      }
+   }
+
+   &.button-primary {
+      &:hover,
+      &:active{
+         color: $button-color-hover;
+         border-color: $button-border-hover;
+      }
+   }
+
+}

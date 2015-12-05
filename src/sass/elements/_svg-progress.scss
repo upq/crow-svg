@@ -1,0 +1,52 @@
+.progress-wrapper{
+   position: fixed;
+   bottom: 0;
+   left: 0;
+   height: 152px;
+   width: 150px;
+   z-index: $zindex-progress;
+   .progress-controls {
+      margin: 0;
+      bottom: 0px;
+      left: 0px;
+      display: inline-block;
+      z-index: $zindex-higher !important;
+      @include user-select(none);
+
+      .media-time,
+      .media-buffering {
+         font-size: 1.2em;
+         font-weight: 500;
+         position: absolute;
+         top: 25%;
+         left: 50%;
+         @include translate(-50%, -25%);
+         color: $comp-2;
+         @include transition($global-transition);
+      }
+      .media-buffering {
+         font-size: 1.2em;
+         font-weight: 700;
+      }
+
+      .media-play-pause {
+         position: absolute;
+         z-index: 1;
+         top: 60%;
+         left: 50%;
+         @include translate(-50%, -60%);
+      }
+
+   }
+
+   .progress-buttons{
+      position: absolute;
+      top: -30px;
+      left: 5px;
+      width: 150px;
+      li {
+         display: inline-block;
+      }
+   }
+
+}

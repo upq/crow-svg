@@ -1,0 +1,209 @@
+// The sheets are designed from the ground up with aesthetics in mind
+// and of course to be super duper friendly for hackers and high beings.
+// If your design has only one complementary or none just simply uncomment
+// equal all the values to $primary.
+
+// * ACRONYMS
+// bg = Background
+// comp = Complementary color
+
+// Grey shades
+$black         : #000000;
+$grey-dark     : lighten($black, 20%) !default;   // #333
+$grey-darker   : lighten($black, 13.5%) !default; // #222
+$grey          : lighten($black, 33.5%) !default; // #555
+$grey-light    : lighten($black, 46.7%) !default; // #777
+// $grey-lighter  : lighten($black, 93.5%) !default; // #eee
+$grey-lighter  : #ecf0f4 !default;
+$grey-lightest : lighten($black, 97.5%) !default; // #f9f
+$white         : #FFFFFF;
+
+$dark: #151e26;
+
+// $grey-comp     : #5c4554;
+$grey-comp     : #f64240;
+$color-test    : #213232;
+
+
+
+$success-color     : #5cb85c;
+$error-color       : #d90034;
+$info-color        : #5bc0de;
+$wait-color        : #428bca;
+$warning-color     : #f0ad4e;
+
+$success-bg        : #5cb85c;
+$error-bg          : #d90034;
+$info-bg           : #5bc0de;
+$wait-bg           : #428bca;
+$warning-bg        : #f0ad4e;
+
+
+// Primary color (Blue)
+$primary               : #00a0e0;
+$comp-1                : #00fbe2;
+$comp-2                : #FFBF01;
+
+
+// Primary color (Black)
+// $primary               : #f1f1f1;
+// $comp-1                : #515151;
+// $comp-2                : #FFBF01;
+
+// Primary color (Purple)
+// $primary               : #4F10AD;
+// $comp-1                : #428bca;
+// $comp-2                : #FFBF01;
+
+// Primary color (Purple)
+// $primary               : #fff7f4;
+// $comp-1                : #a5a2a6;
+// $comp-2                : #5c4554;
+
+
+
+// // Primary color (Lime)
+// $primary               : #9FEE01;
+// $comp-1                : #FFE801;
+// $comp-2                : #4F10AD;
+
+// // Body colors
+// $body-bg       : #ffffff;
+// $body-color    : #010014;
+
+// Body colors
+$body-bg    : $black;
+$body-color : #fafafa;
+
+// Body colors
+// $body-bg       : #fff7f4;
+// $body-color    : #151e26;
+
+
+.inverse {
+  background-color : $body-color;
+  color : $body-bg;
+}
+
+// footer colors
+$footer-background : $body-bg;
+$footer-color      : $body-color;
+
+$primary-dark          : darken($primary, 10%);
+$primary-darker        : darken($primary, 20%);
+// $primary-darkest       : darken($primary, 45%);
+$primary-darkest       : #151e26;
+$primary-light         : lighten($primary, 10%);
+$primary-lighter       : lighten($primary, 20%);
+$primary-lightest      : lighten($primary, 35%);
+
+
+// complementary color
+
+// gradients
+$gradient: ($primary 0%, $comp-1 100%);
+$success-gradient: ($success-color 0%, #00fbe2 100%);
+$error-gradient: ($error-color 0%, #ff5800 100%);
+// -------------- CONFIGURATIONS ----------------
+// ----------------------------------------------
+
+
+//--------------
+// Buttons and Anchors
+// ----------------------------------------------
+$hr-border-color:             $comp-2;
+
+
+//--------------
+// Buttons and Anchors
+// ----------------------------------------------
+// Anchors
+$anchor-color            : $primary ;
+$anchor-border           : $primary-darker ;
+$anchor-background       : transparent ;
+// Anchors hover
+$anchor-color-hover      : $comp-2 ;
+$anchor-background-hover : transparent ;
+$anchor-border-hover     : $primary-darker ;
+
+// Buttons
+$button-border           : $grey-lighter ;
+$button-color            : $primary ;
+$button-background       : transparent ;
+
+// Buttons Hover/Active
+$button-background-hover : $primary-dark ;
+$button-color-hover      : $comp-2 ;
+$button-border-hover     : $grey-lighter ;
+
+//--------------
+// Main nav
+// ----------------------------------------------
+$mainnav-button-border-color: $comp-2;
+
+
+//--------------
+// Modal
+// ----------------------------------------------
+// Background color of modal content area
+$modal-content-bg:                             $body-bg !default;
+// Modal content border color
+$modal-content-border-color:                   rgba(0,0,0,.2) !default;
+
+// Modal backdrop background color
+$modal-backdrop-bg:           $black !default;
+// Modal backdrop opacity
+$modal-backdrop-opacity:      .5 !default;
+// Modal header border color
+$modal-header-border-color:   #e5e5e5 !default;
+// Modal footer border color
+$modal-footer-border-color:   $modal-header-border-color !default;
+
+
+//--------------
+// Navs
+// ----------------------------------------------
+
+// Shared nav styles
+$nav-link-hover-bg:                         $grey-lighter !default;
+$nav-disabled-link-color:                   $grey-light !default;
+$nav-disabled-link-hover-color:             $grey-light !default;
+
+
+//--------------
+// Tabs
+// ----------------------------------------------
+$nav-tabs-border-color:                     rgba($grey-comp, 0.4) !default;
+$nav-tabs-link-hover-border-color:          rgba($grey-comp, 0.4) !default;
+
+$nav-tabs-active-link-hover-bg:             $body-bg !default;
+$nav-tabs-active-link-hover-color:          $primary !default;
+$nav-tabs-active-link-hover-border-color:   $grey-lightest !default;
+
+$nav-tabs-justified-link-border-color:            $grey-lightest !default;
+$nav-tabs-justified-active-link-border-color:     $body-bg !default;
+
+
+//--------------
+// Pills
+// ----------------------------------------------
+$nav-pills-active-link-hover-bg:            $primary-darker !default;
+$nav-pills-active-link-hover-color:         $white !default;
+
+
+
+//--------------
+// Typeography
+// ----------------------------------------------
+$text-muted:                  $grey-light !default;
+$abbr-border-color:           $grey-light !default;
+$blockquote-small-color:      $grey-light !default;
+$blockquote-border-color:     $grey-lighter !default;
+
+
+
+//--------------
+// Cards
+// ----------------------------------------------
+$card-border-color:        $grey-comp;
+$card-cap-bg: $grey-lightest;

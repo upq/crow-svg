@@ -1,0 +1,22 @@
+<div class="svg-button">
+   <div class="button-wrapper">
+      <svg class="button-svg"  viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+         <svg ng-transclude></svg>
+         <g>
+            <path class="button-bg" stroke="none"/>
+            <path class="button-ring-gradient" fill="none" stroke="url(/#gradient-color)" filter="url(/#blur-filter)"/>
+            <path class="button-ring" fill="none" stroke="url(/#gradient-color)"/>
+            <path class="button-ring" fill="none" stroke="url(/#gradient-color)" filter="url(/#blur-filter)"/>
+            <path class="button-ring-gradient" fill="none" stroke="url(/#gradient-color)"/>
+         </g>
+         <g>
+            <path class="button-shape-fill" fill="none"/>
+            <path class="button-shape-fill" fill="none" filter="url(/#blur-filter)"/>
+            <path class="button-shape" fill="none"/>
+         </g>
+      </svg>
+      <svg class="button-text" display="none" height="0" width="0">
+         <text fill="url(/#gradient-color)" x="10" y="15" id="shape-text" alignment-baseline="text-after-edge" line-height="0"></text>
+      </svg>
+   </div>
+</div>

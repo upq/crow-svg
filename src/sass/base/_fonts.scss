@@ -1,0 +1,76 @@
+$OswaldPath: "../../example/fonts/Oswald" !default;
+$OswaldVersion: "" !default;
+$OswaldName: "Oswald" !default;
+
+$RalewayPath: "../../example/fonts/Raleway" !default;
+$RalewayVersion: "1.0" !default;
+$RalewayName: "Raleway" !default;
+
+
+@mixin fontdef($FontsPath, $FontVersion, $FontName, $FontType:"Regular") {
+   src:
+   url('#{$FontsPath}/#{$FontType}/#{$FontName}-#{$FontType}.woff?v=#{$FontVersion}') format('woff'),
+}
+@mixin fontdefNoWoff($FontsPath, $FontVersion, $FontName, $FontType:"Regular") {
+   src:
+   url('#{$FontsPath}/#{$FontType}/#{$FontName}-#{$FontType}.ttf?v=#{$FontVersion}') format('truetype'),
+   url('#{$FontsPath}/#{$FontType}/#{$FontName}-#{$FontType}.svg?v=#{$FontVersion}##{$FontType}') format('svg');
+}
+
+
+@font-face {
+  font-family: 'Oswald';
+  @include fontdef($OswaldPath, $OswaldVersion, $OswaldName, "Light");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Oswald';
+  @include fontdef($OswaldPath, $OswaldVersion, $OswaldName, "Regular");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Oswald';
+  @include fontdef($OswaldPath, $OswaldVersion, $OswaldName, "Bold");
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Raleway';
+  @include fontdefNoWoff($RalewayPath, $RalewayVersion, $RalewayName, "Thin");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Raleway';
+  @include fontdefNoWoff($RalewayPath, $RalewayVersion, $RalewayName, "ExtraLight");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Raleway';
+  @include fontdefNoWoff($RalewayPath, $RalewayVersion, $RalewayName, "Light");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Raleway';
+  @include fontdefNoWoff($RalewayPath, $RalewayVersion, $RalewayName, "Regular");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Raleway';
+  @include fontdefNoWoff($RalewayPath, $RalewayVersion, $RalewayName, "Medium");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Raleway';
+  @include fontdefNoWoff($RalewayPath, $RalewayVersion, $RalewayName, "ExtraBold");
+  font-weight: 800;
+  font-style: normal;
+}

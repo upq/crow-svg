@@ -1,0 +1,26 @@
+{
+   "asi": false,
+  "node": true,
+  "esnext": true,
+  "bitwise": true,
+  "immed": true,
+  "indent": 4,
+  "latedef": "nofunc",
+  "newcap": true,
+  "nonew": true,
+  "noarg": true,
+  "regexp": true,
+  "undef": true,
+  "laxbreak": true,
+  "unused": false,
+  "trailing": true,
+  "sub": true,
+  "globals": {
+    "angular": false,
+    "window": false,
+    "$": false,
+    "document": false,
+    "localStorage": false,
+    "app": false
+  }
+}

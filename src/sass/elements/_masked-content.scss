@@ -1,0 +1,34 @@
+.masked-content-wrapper {
+   overflow: hidden;
+   @include transition($global-transition);
+   @include translate3d(0px, 0px, 0px);
+   position: absolute;
+   width: 100%;
+   z-index: -1000;
+   &.active {
+      z-index: $zindex-modal;
+   }
+   .mask {
+      width: 100%;
+
+      .masked-content {
+         background: transparent;
+         margin: 0;
+         @include transition($global-transition);
+         @include transition-duration(450ms);
+         @include translate3d(-120%, 0px, 0px);
+         &.mask-revealed {
+            @include translate3d(0px, 0px, 0px);
+         }
+      }
+   }
+}
+
+.masked-content-trigger {
+   //width: 30px;
+   position: relative !important;
+   top: -80px !important;
+   left: -30px;
+   @include transition($global-transition);
+   @include translate3d(0px, 0px, 0px);
+}

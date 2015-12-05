@@ -1,0 +1,144 @@
+.button-wrapper{
+   cursor: pointer;
+}
+
+[svg-button]{
+   transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+   transition-duration: $global-transition-duration;
+   line-height: 0 !important;
+   font-weight: 700 !important;
+
+   .button-svg {
+      .button-ring-gradient {
+         animation: dash-inverse 1.5s backwards;
+      }
+   }
+   &.active {
+      transform: scale(1.2, 1.2) translate(0, 0);
+      .button-bg {
+         fill: $primary;
+         fill-opacity: 1;
+      }
+      .button-svg {
+         .button-shape {
+            stroke: url(/#gradient-color);
+         }
+         .button-ring-gradient {
+            animation: dash 1.5s forwards;
+         }
+         .button-bg {
+            fill: rgba(0,0,0,0.8)
+         }
+      }
+   }
+}
+
+.svg-shape-svg{
+   @include transition(all ease-in-out 300ms);
+}
+.svg-shape-svg{
+   &.active{
+      transform: scale(1.1, 1.1) translate(0, 0) !important;
+   }
+}
+
+.drawer {
+   @include transition(all ease-in-out 300ms);
+   .drawer-svg {
+      .drawer-ring {
+         @include transition(all ease-in-out 300ms);
+         stroke-dasharray: 1000;
+         stroke-dashoffset: 1000;
+      }
+   }
+   &.active {
+      transform: scale(1.1, 1.1) translate(0, 0) !important;
+      .drawer-svg {
+         // .drawer-shape {
+         //    stroke: $comp-1;
+         // }
+         .drawer-ring {
+            animation: dash 1.5s forwards;
+            // fill: $primary-darkest;
+         }
+      }
+   }
+}
+
+.delete-button {
+   .button-wrapper{
+      .button-svg{
+         .button-bg{
+            fill: $primary-darkest;
+            fill-opacity: 0.4;
+         }
+         .button-text{
+            font-weight: 700;
+            fill: $primary-darkest;
+            fill-opacity: 0.4;
+            stroke: $gradient;
+         }
+      }
+   }
+
+}
+.svg-40 {
+   .button-wrapper{
+      .button-text{
+         position: absolute;
+         top: 37px;
+         text-transform: uppercase;
+         font-weight: 700 !important;
+         font-family: $headings-font-family;
+         font-size: 1.2em;
+         padding: 5px 5px;
+      }
+   }
+}
+.svg-60 {
+   .button-wrapper{
+      .button-text{
+         position: absolute;
+         top: 57px;
+         font-weight: 700;
+         left: 8px;
+         text-transform: uppercase;
+         font-weight: 700 !important;
+         font-family: $headings-font-family;
+         font-size: 1.2em;
+         padding: 5px 5px;
+      }
+   }
+}
+.shape-text-l{
+   height: 100%;
+   font-size: 1.7em;
+   position: absolute;
+   color: $comp-2;
+}
+.shape-text-b {
+   font-size: 1.7em;
+   position: absolute;
+   color: $comp-2;
+   left: 25%;
+   bottom: -20px;
+}
+
+.svg-reply-counter {
+   .button-wrapper{
+      .button-text{
+         position: absolute;
+         top: 57px;
+         display: inline-block;
+         font-weight: 700;
+         left: 28px;
+         text{
+            font-size: 1.2em !important;
+            text-transform: uppercase;
+            font-weight: 700 !important;
+            font-family: $headings-font-family;
+            padding: 5px 5px;
+         }
+      }
+   }
+}

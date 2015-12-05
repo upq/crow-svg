@@ -1,0 +1,54 @@
+growl-message {
+  position: fixed;
+  bottom: 10px;
+  left: 50px;
+  margin-left: 90px;
+  z-index: $zindex-max;
+}
+.message {
+  position: fixed;
+  bottom: 10px;
+  left: 50px;
+  margin-left: 90px;
+  transition: all ease-in-out 800ms;
+  -webkit-transform: translate3d(0px, 200px, 0px);
+  transform: translate3d(0px, 200px, 0px);
+
+  &.active {
+    -webkit-transform: translate3d(0px, -5px, 0px);
+    transform: translate3d(0px, -5px, 0px);
+  }
+
+  .mask {
+    overflow: hidden;
+    width: 100%;
+    .content {
+      color: #111;
+      background: url(http://www.overthetinyhills.com/assets/img/bg-message.png) right top no-repeat;
+      padding: 15px 100px 55px 50px;
+      font-weight: 100;
+      font-size: 1em;
+      transition: all ease-in-out 800ms;
+      -webkit-transform: translate3d(-100%, 0px, 0px);
+      transform: translate3d(-100%, 0px, 0px);
+      &.active {
+        -webkit-transform: translate3d(0px, 0px, 0px);
+        transform: translate3d(0px, 0px, 0px);
+      }
+    }
+  }
+}
+
+.char {
+  position: absolute;
+  top: -52px;
+  left: -123px;
+  transition: all ease-in-out 800ms;
+  //-webkit-transform: translate3d(0px, 0px, 0px);
+  //transform: translate3d(0px, 0px, 0px);
+  //&:active{
+  //  -webkit-transform: translate3d(0px, 0px, 0px);
+  //  transform: translate3d(0px, 0px, 0px);
+  //
+  //}
+}

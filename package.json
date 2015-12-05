@@ -1,0 +1,30 @@
+{
+  "name": "crow-svg",
+  "version": "0.0.1",
+  "scripts": {
+    "pretest": "jshint ."
+  },
+  "dependencies": {
+    "grunt": "*",
+    "grunt-cli": "0.1.13",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-connect": "*",
+    "grunt-contrib-cssmin": "^0.14.0",
+    "grunt-contrib-sass": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-grunticon": "^2.2.2",
+    "grunt-svgmin": "^2.0.1",
+    "grunt-svgstore": "^0.5.0",
+    "jshint": "*"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "",
+    "url": "https://github.com/upq/crow-svg"
+  },
+  "engines": {
+    "node": "0.12.x"
+  },
+  "description": "A collection of directives that eases the use of svgs in angular apps and speeds up the performance."
+}

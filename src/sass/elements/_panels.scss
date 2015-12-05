@@ -1,0 +1,120 @@
+$default-panel-width: 500px;
+
+[class$=-panel],
+.panel-y,
+.panel-x,
+.drawer-open {
+   @include transition($global-transition);
+   background-color: $body-bg;
+   z-index: $zindex-panel;
+}
+
+.panel-open {
+   overflow-y: hidden;
+}
+
+.panel-x {
+   left: 0;
+   border: 1px solid;
+   width: 100% !important;
+   position: fixed;
+   overflow-x: hidden;
+   overflow-y: auto;
+
+   height: 100%;
+   bottom: 0;
+   background-color: rgba($black, 0.75);
+   border-width: 1px 0px 0px 0px !important;
+   @include translate3d(0px, 100%, 0px);
+
+   @include gradient-border-directional($gradient);
+   @include media-breakpoint-down(xs) {
+      @include translate3d(0px, 100%, 0px);
+   }
+   .close-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: $zindex-panel;
+   }
+}
+
+
+
+.panel-y {
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   height: 100%;
+   overflow-x: hidden;
+   overflow-y: auto;
+   border: 1px solid;
+   width: $default-panel-width;
+   right: 0;
+   border-width: 0px 0px 0px 1px !important;
+
+   @include translate3d($default-panel-width, 0px, 0px);
+   @include gradient-border-directional($gradient);
+   .close-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: $zindex-panel;
+   }
+   @include media-breakpoint-down(xs) {
+      width: 100% !important;
+      border: none !important;
+      @include translate3d(100%, 0px, 0px);
+   }
+}
+
+.poll-overlay {
+   position: fixed;
+   top: 0;
+   right: 0;
+   height: 100%;
+   width: 100%;
+   overflow-x: hidden;
+   overflow-y: auto;
+   background-color: rgba($primary-darkest, 0.7);
+   z-index: $zindex-modal;
+   .close-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: $zindex-panel;
+   }
+   @include media-breakpoint-down(xs) {
+      width: 100% !important;
+      border: none !important;
+   }
+}
+
+
+.persona-panel {
+   width: 500px;
+   left: 0;
+   border-width: 0px 1px 0px 0px !important;
+   @include translate3d(-500px, 0px, 0px);
+}
+.hoopoe-panel{
+   width: 400px !important;
+   .container {
+      height: 100%;
+      position: absolute;
+   }
+}
+
+
+.drawer-open {
+   -webkit-box-shadow: -25px 0px 53px -8px rgba(0,0,0,0.7);
+   -moz-box-shadow: -25px 0px 53px -8px rgba(0,0,0,0.7);
+   box-shadow: -25px 0px 53px -8px rgba(0,0,0,0.7);
+   @include translate3d(0px, 0px, 0px);
+}
+
+.new-data{
+   .pulse {
+      animation: pulse 1s infinite alternate;
+   }
+}

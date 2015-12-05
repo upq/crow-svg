@@ -1,0 +1,220 @@
+form {
+  max-width: 300px;
+  margin: 2em auto;
+}
+
+.full-width-form {
+  max-width: 100%;
+  padding: 1em;
+}
+
+legend {
+  font-size: 1.5em;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: Roboto;
+  letter-spacing: -1px;
+  color: $body-color;
+  background: $primary;
+  padding: 0.2em;
+  position: relative;
+  left: 0;
+}
+
+.inputfile {
+	// width: 0.1px;
+	// height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.inputfile + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: $white;
+    background-color: $black;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.inputfile:focus + label {
+   outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: $primary;
+}
+.inputfile + label * {
+	pointer-events: none;
+}
+
+
+input[type="text"], input[type="number"],input[type="time"],input[type="password"],textarea, select{
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: $font-family-sans-serif;
+  line-height: 2em;
+  height: 3em;
+  min-width: 100%;
+  padding: .5em 1.34em;
+  margin-bottom: 1em;
+  background: transparent;
+  color: $body-color;
+  border: 1px solid $grey-comp;
+  @include gradient-border-directional($gradient);
+  border-radius: 0em;
+}
+
+
+textarea {
+  height: 12em;
+}
+
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="time"]:focus, textarea:focus{
+  border-color: $primary;
+}
+
+textarea,
+input[type="number"],
+input[type="text"],
+input[type="number"]:focus,
+input[type="text"]:focus,
+input[type="text"]:valid {
+  outline: none;
+  color: $body-color;
+}
+
+
+
+.ac-custom {
+  padding: 0 3em;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.ac-custom h2 {
+  font-size: 3em;
+  font-weight: 300;
+  padding: 0 0 0.5em;
+  margin: 0 0 30px;
+}
+
+.ac-custom ul,
+.ac-custom ol {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.ac-custom li {
+  margin: 0 auto;
+  padding: 1em 0;
+  position: relative;
+}
+
+.ac-custom label {
+  display: inline-block;
+  position: relative;
+  font-size: 1.2em;
+  padding: 0 0 0 80px;
+  vertical-align: top;
+  color: $primary;
+  cursor: pointer;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+.ac-custom input[type="checkbox"],
+.ac-custom input[type="radio"],
+.ac-custom label::before {
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  left: 0;
+  margin-top: -25px;
+  position: absolute;
+  cursor: pointer;
+}
+
+.ac-custom input[type="checkbox"],
+.ac-custom input[type="radio"] {
+  opacity: 0;
+  -webkit-appearance: none;
+  display: inline-block;
+  text-align: left;
+  z-index: 100;
+}
+//
+.ac-custom label::before {
+  content: '';
+  border: 3px solid #fff;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.ac-radio label::before {
+  border-radius: 50%;
+}
+
+.ac-custom input[type="checkbox"]:checked + label,
+.ac-custom input[type="radio"]:checked + label {
+  color: $comp-1;
+}
+
+.ac-custom input[type="checkbox"]:checked + label::before,
+.ac-custom input[type="radio"]:checked + label::before {
+  background-color: $comp-1;
+  opacity: 0.2;
+}
+/* General SVG and path styles */
+
+.ac-custom svg {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  margin-top: -20px;
+  left: 5px;
+  pointer-events: none;
+}
+
+.ac-custom svg path {
+  stroke: url(#gradient-color);
+  stroke-width: 13px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+/* Specific input, SVG and path styles */
+/* Circle */
+
+.ac-circle input[type="checkbox"],
+.ac-circle input[type="radio"],
+.ac-circle label::before {
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  left: 10px;
+  position: absolute;
+}
+
+.ac-circle label::before {
+  background-color: $primary;
+  border: none;
+}
+
+.ac-circle svg {
+  width: 70px;
+  height: 70px;
+  margin-top: -35px;
+  left: -10px;
+}
+
+.ac-circle svg path {
+  stroke-width: 3px;
+}

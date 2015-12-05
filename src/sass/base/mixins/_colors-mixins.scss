@@ -1,0 +1,44 @@
+@mixin gradient-border-vertical($gradient) {
+  -moz-border-image: -moz-linear-gradient(top, $gradient);
+  -webkit-border-image: -webkit-linear-gradient(top, $gradient);
+  border-image: linear-gradient(to bottom, $gradient);
+  border-image-slice: 1;
+}
+
+@mixin gradient-border-horizontal($gradient) {
+  -moz-border-image: -moz-linear-gradient(left, $gradient);
+  -webkit-border-image: -webkit-linear-gradient(left, $gradient);
+  border-image: linear-gradient(to right, $gradient);
+  border-image-slice: 1;
+}
+
+
+@mixin gradient-border-directional($gradient) {
+  -moz-border-image: -moz-linear-gradient(145deg, $gradient) !important;
+  -webkit-border-image: -webkit-linear-gradient(145deg, $gradient) !important;
+  border-image: linear-gradient(145deg, $gradient) !important;
+  border-image-slice: 1 !important;
+}
+
+@mixin gradient-directional($gradient) {
+  background-image: linear-gradient(145deg , $gradient) !important;
+  background-repeat: repeat-x;
+}
+
+
+@mixin gradient-horizontal($gradient) {
+  background-image: linear-gradient(to right, $gradient);
+  background-repeat: repeat-x;
+}
+
+@mixin gradient-vertical($gradient) {
+  background-image: linear-gradient(to bottom, $gradient);
+  background-repeat: repeat-x;
+}
+
+
+@mixin box-shadow($shadow...) {
+  @if $enable-shadows {
+    box-shadow: $shadow;
+  }
+}

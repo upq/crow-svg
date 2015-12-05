@@ -1,0 +1,93 @@
+// Styles for the body, footer and stuff like that
+// lives here.
+$footer-height: 100px;
+
+*,
+*:after,
+*:before {
+   margin: 0;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+.wrap {
+  min-height: 100%;
+  margin: 0 auto -$footer-height;
+  padding: 0 0 $footer-height;
+}
+.push {
+   height: 200px;
+}
+
+.site-footer{
+   height: $footer-height;
+   margin-top: 22px;
+   position: relative;
+   bottom: -$footer-height;
+   a {
+      border: none !important;
+   }
+   svg{
+      position: relative;
+      left: 0px;
+      top: 20px;
+   }
+}
+
+
+body {
+   background: $body-bg;
+   color: $body-color;
+   overflow-x: hidden;
+   font-family: $font-family-base;
+   line-height: $body-line-height;
+   font-size: $font-size-root;
+   font-weight: 500;
+}
+
+.main-view,
+footer {
+   margin-left: $main-nav-width !important;
+   @include media-breakpoint-down(xs) {
+      margin-left: 0px !important;
+   }
+}
+
+.hidden {
+   display: none !important;
+   visibility: hidden !important;
+}
+
+.pulse {
+   animation: pulse 1s infinite alternate;
+}
+
+@include keyframes (pulse) {
+   0% {
+      opacity: 0.4;
+      @include scale(0.75);
+
+   }
+   100% {
+      opacity: 1;
+      @include scale(1.10);
+   }
+}
+
+@keyframes fadein {
+   from { opacity: 0.2; }
+   to { opacity: 1; }
+}
+
+@keyframes dash {
+   to {
+      stroke-dashoffset: 0;
+   }
+}
+
+@keyframes dash-inverse {
+   to {
+      stroke-dashoffset: 1000;
+   }
+}

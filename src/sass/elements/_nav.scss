@@ -1,0 +1,380 @@
+// Navs
+// --------------------------------------------------
+// Base class
+
+.nav {
+  margin-bottom: 0;
+  padding-left: 0; // Override default ul/ol
+  list-style: none;
+  @include clearfix;
+
+  > li {
+    position: relative;
+    display: block;
+
+    > a {
+      position: relative;
+      display: block;
+      padding: $nav-link-padding;
+      color: $grey-comp;
+      &:hover,
+      &:focus {
+        color: $nav-tabs-active-link-hover-color;
+        text-decoration: none;
+        //background-color: $nav-link-hover-bg;
+      }
+    }
+
+    // Disabled state sets text to gray and nukes hover/tab effects
+    &.disabled > a {
+      color: $nav-disabled-link-color;
+
+      &:hover,
+      &:focus {
+        color: $nav-disabled-link-hover-color;
+        text-decoration: none;
+        background-color: transparent;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  // Open dropdowns
+  .open > a {
+    &,
+    &:hover,
+    &:focus {
+      background-color: $nav-link-hover-bg;
+      border-color: $primary;
+    }
+  }
+}
+
+
+// Tabs
+// -------------------------
+
+// Give the tabs something to sit on
+.nav-tabs {
+  border-bottom: 1px solid $nav-tabs-border-color;
+  border-width: 0px 0px 1px 0px !important;
+  //border-bottom: 1px solid $primary !important;
+  @include gradient-border-directional($gradient);
+  > li {
+    float: left;
+    // Make the list-items overlay the bottom border
+    margin-bottom: -1px;
+
+    // Actual tabs (as links)
+    > a {
+      margin-right: 2px;
+      line-height: $line-height;
+      //border: 1px solid transparent;
+      border: none;
+      //border-radius: 0;
+      &:hover {
+        //border-color: $nav-tabs-link-hover-border-color $nav-tabs-link-hover-border-color $nav-tabs-border-color;
+      }
+    }
+
+    // Active state, and its :hover to override normal :hover
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: $nav-tabs-active-link-hover-color;
+        //background-color: $nav-tabs-active-link-hover-bg;
+        cursor: default;
+      }
+    }
+  }
+  // pulling this in mainly for less shorthand
+  &.nav-justified {
+    @extend .nav-justified;
+    @extend .nav-tabs-justified;
+  }
+}
+
+
+$navTabVerticalMinWidth: 74px;
+
+$navTabSpacing: 3px;
+$navTabContentSpacing: 20px;
+$verticalTabHeight: 42px;
+$navTabBdWidth: 1px;
+// Common styles
+.tabs-left,
+.tabs-right {
+  .nav-tabs > li {
+    float: none;
+    > a {
+      min-width: $navTabVerticalMinWidth;
+      margin-right: 0;
+      margin-bottom: $navTabSpacing;
+    }
+  }
+}
+
+// Tabs on the left
+.tabs-left > .nav-tabs {
+  float: left;
+  margin-right: $navTabContentSpacing - $navTabBdWidth;
+  border-width: 0px 1px 0px 0px !important;
+  //border-right: 1px solid $primary !important;
+  @include gradient-border-directional($gradient);
+
+  > li {
+    > a {
+      margin-right: -$navTabBdWidth;
+      //@include border-radius($borderRadiusBase 0 0 $borderRadiusBase);
+
+      &:hover,
+      &:focus {
+        @include gradient-border-directional($gradient);
+      }
+    }
+
+    &.active {
+      > a {
+        &,
+        &:hover,
+        &:focus {
+          @include gradient-border-directional($gradient);
+        }
+      }
+    }
+  }
+}
+
+
+
+// VERTICAL VARIATION
+// -------------------------
+.tabs-vertical {
+  position: relative;
+
+  > .nav-tabs {
+    position: absolute;
+    top: $navTabContentSpacing;
+    display: block;
+    width: auto;
+    height: $verticalTabHeight;
+    margin: 0;
+    white-space: nowrap;
+    border: 0 none;
+    //@include transform-origin(0, 0);
+    -webkit-transform-origin: (0,0);
+    -moz-transform-origin: (0,0);
+    -ms-transform-origin: (0,0);
+    -o-transform-origin: (0,0);
+    transform-origin: (0,0);
+    background-color: $body-bg;
+    @include rotate(90deg);
+    //@include box-sizing(border-box);
+
+    > li {
+      position: relative;
+      display: inline-block;
+      background-color: beige;
+
+      > a {
+        min-width: 0;
+        margin: 0;
+      }
+
+      &.active {
+        z-index: 1; // keep above adjacent tabs
+      }
+    }
+  }
+
+  &.tabs-left {
+    > .nav-tabs {
+      left: $verticalTabHeight + $navTabBdWidth; // must use this because of left margin on tab-content
+      top: 180px;
+      border-width: 1px 0px 0px 0px !important;
+      overflow: hidden;
+      overflow-x: scroll;;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      @include gradient-border-directional($gradient);
+
+      > li {
+        height: $verticalTabHeight + $navTabBdWidth;
+        top: -$navTabBdWidth;
+
+        > a {
+          //@include border-radius(0 0 $borderRadiusBase $borderRadiusBase);
+
+          &:hover,
+          &:focus {
+            @include gradient-border-directional($gradient);
+          }
+        }
+
+        &.active {
+          > a {
+            &,
+            &:hover,
+            &:focus {
+              //background-color: $navLinkBgActive; // overlap border of tab-content
+              border-width: 1px 0px 0px 0px !important;
+              @include gradient-border-directional($gradient);
+            }
+          }
+        }
+      }
+    }
+    .tab-content {
+      margin-left: $verticalTabHeight;
+      border-width: 0px 0px 0px 1px !important;
+      @include gradient-border-directional($gradient);
+    }
+  }
+  &.tabs-right {
+    > .nav-tabs {
+      right: 100%;
+      margin-left: -$navTabBdWidth;
+      border-width: 0px 0px 1px 0px !important;
+      @include gradient-border-directional($gradient);
+
+      > li {
+        > a {
+          //@include border-radius($borderRadiusBase $borderRadiusBase 0 0);
+
+          &:hover,
+          &:focus {
+            @include gradient-border-directional($gradient);
+          }
+        }
+
+        &.active {
+          > a {
+            &,
+            &:hover,
+            &:focus {
+              border-width: 0px 0px 1px 0px !important;
+              @include gradient-border-directional($gradient);
+            }
+          }
+        }
+      }
+    }
+    .tab-content {
+      margin-right: $verticalTabHeight;
+      border-width: 0px 1px 0px 0px !important;
+      @include gradient-border-directional($gradient);
+    }
+  }
+}
+
+// Pills
+// -------------------------
+.nav-pills {
+  > li {
+    float: left;
+
+    // Links rendered as pills
+    > a {
+      border-radius: $nav-pills-border-radius;
+    }
+    + li {
+      margin-left: 2px;
+    }
+
+    // Active state
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: $nav-pills-active-link-hover-color;
+        //background-color: $nav-pills-active-link-hover-bg;
+      }
+    }
+  }
+}
+
+
+// Stacked pills
+.nav-stacked {
+  > li {
+    float: none;
+    + li {
+      margin-top: 2px;
+      margin-left: 0; // no need for this gap between nav items
+    }
+  }
+}
+
+
+// Nav variations
+// --------------------------------------------------
+
+// Justified nav links
+// -------------------------
+
+.nav-justified {
+  width: 100%;
+
+  > li {
+    float: none;
+    > a {
+      text-align: center;
+      margin-bottom: 5px;
+    }
+  }
+
+  > .dropdown .dropdown-menu {
+    top: auto;
+    left: auto;
+  }
+
+
+}
+
+// Move borders to anchors instead of bottom of list
+//
+// Mixin for adding on top the shared `.nav-justified` styles for our tabs
+.nav-tabs-justified {
+  border-bottom: 0;
+
+  > li > a {
+    // Override margin from .nav-tabs
+    margin-right: 0;
+    border-radius: 0;
+  }
+
+  > .active > a,
+  > .active > a:hover,
+  > .active > a:focus {
+    border: 1px solid $nav-tabs-justified-link-border-color;
+  }
+
+}
+
+
+// Tabbable tabs
+// -------------------------
+
+// Hide tabbable panes to start, show them when `.active`
+.tab-content {
+  > .tab-pane {
+    display: none;
+  }
+  > .active {
+    display: block;
+  }
+}
+
+
+// Dropdowns
+// -------------------------
+
+// Specific dropdowns
+.nav-tabs .dropdown-menu {
+  // make dropdown border overlap tab border
+  margin-top: -1px;
+  // Remove the top rounded corners here since there is a hard edge above the menu
+  @include border-top-radius(0);
+}
